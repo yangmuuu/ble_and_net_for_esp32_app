@@ -14,6 +14,9 @@ qt_add_executable(ble_and_net_for_esp32_app
     widget.cpp
     widget.h
     widget.ui
+    ble.h
+    ble.cpp
+    ble_devices_scan_list.h ble_devices_scan_list.cpp ble_devices_scan_list.ui
 )
 
 target_link_libraries(ble_and_net_for_esp32_app PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt6::Bluetooth Qt6::Network)
@@ -22,7 +25,7 @@ set_target_properties(ble_and_net_for_esp32_app PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
+    # WIN32_EXECUTABLE TRUE
 )
 
 include(GNUInstallDirs)
